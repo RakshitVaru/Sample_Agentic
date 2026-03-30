@@ -1,0 +1,2370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QE Executive Newsletter - March 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+Pro:wght@200;300;400;600;700&family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --accent: #d4af37;
+            --secondary: #002f6c;
+            --tertiary: #00509e;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --text-light: #7a7a9a;
+            --bg-light: #fafafa;
+            --bg-gradient: linear-gradient(90deg, #002f6c, #00509e);
+            --card-shadow: 0 4px 40px rgba(0,0,0,0.08);
+            --hover-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            --success: #2d5016;
+            --warning: #d4af37;
+            --danger: #8b0000;
+            --info: #1e3a8a;
+            --luxury-gold: #d4af37;
+            --luxury-cream: #faf8f3;
+            --luxury-navy: #002f6c;
+            --luxury-gray: #6b7280;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.7;
+            background: linear-gradient(45deg, #faf8f3 0%, #f5f5f0 50%, #fafafa 100%);
+            background-attachment: fixed;
+            scroll-behavior: smooth;
+        }
+
+        /* Font Size Hierarchy */
+        h1 { font-size: 32px; }
+        h2 { font-size: 24px; }
+        h3 { font-size: 20px; }
+        h4 { font-size: 18px; }
+        h5 { font-size: 16px; }
+        h6 { font-size: 14px; }
+        
+        /* Standardize all fonts to Source Sans Pro */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        p, span, div, li, td, th {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 5px auto;
+            background: white;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+            overflow: hidden;
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--luxury-gold), transparent);
+            opacity: 0.3;
+        }
+
+        /* Header Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--luxury-gold), transparent);
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--luxury-gold);
+            opacity: 0.8;
+        }
+
+        .hero .subtitle {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-size: 10px;
+            margin-bottom: 16px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .hero .date {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 12px;
+            opacity: 0.85;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--glass-bg);
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 12px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .date::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hero .date:hover::before {
+            left: 100%;
+        }
+
+        .hero .date:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Executive Summary */
+        .executive-summary {
+            /* padding: 30px 30px 25px; */
+            padding: 20px 70px 10px;
+            /* background: linear-gradient(180deg, var(--luxury-cream) 0%, #ffffff 100%); */
+            position: relative;
+        }
+        
+        .executive-summary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 25px;
+            background: var(--luxury-gold);
+            opacity: 0.6;
+        }
+
+        .section-title {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 24px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            letter-spacing: -0.3px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--luxury-gold);
+            opacity: 0.8;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            margin: 30px 0 0;
+            background: linear-gradient(180deg, #ffffff 0%, var(--luxury-cream) 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+        }
+
+        .metric-card {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-right: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .metric-card:hover::before {
+            opacity: 1;
+        }
+
+        .metric-card:last-child {
+            border-right: none;
+        }
+
+        .metric-card:hover {
+            background: linear-gradient(135deg, var(--luxury-cream), #ffffff);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .metric-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--info);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .metric-card:nth-child(2)::after { background: var(--success); }
+        .metric-card:nth-child(3)::after { background: var(--luxury-gold); }
+        .metric-card:nth-child(4)::after { background: #9b59b6; }
+
+        .metric-card:hover::after {
+            width: 80px;
+            height: 4px;
+        }
+
+        .metric-number {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: block;
+            line-height: 1;
+            position: relative;
+        }
+        
+        .metric-number::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background: var(--luxury-gold);
+            opacity: 0.6;
+        }
+
+        .metric-card:nth-child(2) .metric-number { color: var(--success); }
+        .metric-card:nth-child(3) .metric-number { color: var(--luxury-gold); }
+        .metric-card:nth-child(4) .metric-number { color: #9b59b6; }
+        .metric-card:nth-child(5) .metric-number { color: var(--info); }
+
+        .metric-label {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 9px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Tabs Section */
+        .tabs-section {
+            padding: 0px 10px 0px;
+            background: var(--bg-light);
+            position: relative;
+        }
+        
+        .tabs-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--luxury-gold), transparent);
+            opacity: 0.3;
+        }
+
+        .tabs-container {
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 60px rgba(0,0,0,0.06);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .tab-buttons {
+            display: flex;
+            background: var(--bg-gradient);
+            padding: 0;
+            overflow: hidden;
+            flex-wrap: nowrap;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 12px 8px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.15s ease, background-color 0.15s ease;
+            position: relative;
+            white-space: nowrap;
+            min-width: 80px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            overflow: hidden;
+            transform: translateZ(0); /* Hardware acceleration without blur */
+        }
+        
+        .tab-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.2);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.15s ease;
+            z-index: -1;
+        }
+        
+        .tab-button:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .tab-button:not(:hover)::before {
+            transform: scaleX(0);
+        }
+        
+        .tab-button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--luxury-gold);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.15s ease;
+        }
+        
+        .tab-button:hover::after {
+            transform: scaleX(0.5);
+        }
+        
+        .tab-button:not(:hover)::after {
+            transform: scaleX(0);
+        }
+
+        .tab-button:hover {
+            color: white;
+        }
+
+        .tab-button.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--luxury-gold);
+            transform: scaleX(1);
+        }
+
+        .tab-content {
+            padding: 15px 20px;
+            min-height: 350px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--luxury-cream) 100%);
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .tab-pane.active {
+            display: block !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid var(--luxury-gold);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .content-card:hover::before {
+            opacity: 1;
+        }
+
+        .content-card:hover {
+            background: linear-gradient(135deg, #ffffff, var(--luxury-cream));
+            box-shadow: var(--hover-shadow);
+        }
+
+        .content-card h3 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            letter-spacing: -0.3px;
+            z-index: 1;
+        }
+        
+        .content-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--luxury-gold);
+            opacity: 0.7;
+        }
+
+        .content-card p {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(0, 212, 255, 0.02));
+            border-left: 4px solid var(--luxury-gold);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 0px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 60px;
+            color: var(--luxury-gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .testimonial p {
+            margin-left: 45px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+        .success-story {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.04));
+            border-left: 4px solid var(--success);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+
+        .automation-tool {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--luxury-cream);
+            border-radius: 10px;
+            margin: 5px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .automation-tool::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .automation-tool:hover::before {
+            left: 100%;
+        }
+
+        .automation-tool:hover {
+            background: white;
+            box-shadow: var(--card-shadow);
+        }
+
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), #1e40af);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 3px 15px rgba(59, 130, 246, 0.3);
+            position: relative;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .automation-tool:hover .tool-icon {
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .tool-details h4 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 6px;
+            letter-spacing: -0.2px;
+        }
+
+        .tool-details p {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        /* Events Section */
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            margin: 20px 0;
+            border-left: 4px solid var(--info);
+        }
+
+        .event-date {
+            background: var(--info);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .skill-level {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-gradient);
+            color: white;
+            text-align: center;
+            padding: 5px 5px;
+            margin: 0 auto;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 1;
+        }
+
+        .footer .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 47, 108, 0.2);
+            padding: 5px;
+            border-radius: 8px;
+            backdrop-filter: blur(20px);
+        }
+
+        .footer h3 {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .footer p {
+            font-family: 'Source Sans Pro', sans-serif;
+            opacity: 0.95;
+            /* margin-bottom: 10px; */
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            font-size: 14px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .footer .contact {
+            font-size: 14px;
+            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        /* Navigation Section */
+        .navigation-section {
+            margin-top: 15px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.02));
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+        }
+        
+        .nav-title {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+        
+        .navigation-section .tab-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: transparent;
+            padding: 0;
+        }
+        
+        .navigation-section .tab-button {
+            background: white;
+            color: var(--primary);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 25px;
+            padding: 12px 20px;
+            margin: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .navigation-section .tab-button:hover {
+            background: var(--luxury-gold);
+            color: white;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .navigation-section .tab-button.active {
+            background: var(--luxury-gold);
+            color: white;
+            border-color: var(--luxury-gold);
+        }
+        
+        .navigation-section .tab-button::before,
+        .navigation-section .tab-button::after {
+            display: none;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 30px 15px 20px;
+            }
+            
+            .tab-button {
+                font-size: 0.65rem;
+                padding: 12px 8px;
+                min-width: 80px;
+            }
+            
+            .tab-content {
+                padding: 20px 15px;
+            }
+            
+            .executive-summary, .tabs-section {
+                padding: 10px 10px;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            .automation-tool {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .metric-card {
+                padding: 20px 10px;
+            }
+            
+            .footer {
+                padding: 20px 20px;
+            }
+            
+            .footer .container {
+                padding: 0px;
+            }
+            
+            .navigation-section {
+                padding: 10px;
+                margin-top: 10px;
+            }
+            
+            .nav-title {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+            
+            .navigation-section .tab-button {
+                font-size: 0.6rem;
+                padding: 8px 12px;
+                margin: 2px;
+            }
+        }
+
+        /* Accessibility Enhancements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Focus states for keyboard navigation */
+        .tab-button:focus,
+        .metric-card:focus,
+        .content-card:focus,
+        .automation-tool:focus,
+        .skill-card:focus {
+            outline: 3px solid var(--luxury-gold);
+            outline-offset: 2px;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .container {
+                border: 2px solid var(--luxury-gold);
+            }
+
+            .metric-card,
+            .content-card,
+            .automation-tool,
+            .skill-card {
+                border: 2px solid var(--luxury-gray);
+            }
+        }
+
+        /* Enhanced hover states */
+        .metric-card:focus-within,
+        .content-card:focus-within,
+        .automation-tool:focus-within {
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* Portfolio Nav Cards */
+        .tab-button.portfolio-nav-btn {
+            flex: unset;
+            min-width: unset;
+            padding: 14px 12px;
+            text-align: left;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.8);
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 1rem;
+            line-height: 1;
+            white-space: normal;
+        }
+        .tab-button.portfolio-nav-btn::before,
+        .tab-button.portfolio-nav-btn::after { display: none !important; }
+        .tab-button.portfolio-nav-btn:hover {
+            background: rgba(255,255,255,0.13);
+            border-color: rgba(255,255,255,0.28);
+            color: white;
+        }
+        .tab-button.portfolio-nav-btn.active {
+            background: rgba(212,175,55,0.18) !important;
+            border-color: rgba(212,175,55,0.55) !important;
+            color: white !important;
+            box-shadow: 0 0 18px rgba(212,175,55,0.12);
+        }
+        .tab-button.portfolio-nav-btn.active .pnb-sub {
+            color: rgba(212,175,55,0.65) !important;
+        }
+    </style>
+    <!-- Chart.js only (simpler approach) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content fade-in">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                    <div style="flex: 0 0 auto;">
+                        <img  alt="DaaS Logo" style="height: 35px; width: 225px; border-radius: 8px;">
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <h1>QE Executive Newsletter</h1>
+                        <p class="subtitle">Driving Excellence Through Innovation & Automation</p>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="date">March 2026 Edition</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Summary -->
+        <section class="executive-summary">
+            <h2 class="section-title fade-in">Impact Summary</h2>
+            <!-- <p class="fade-in stagger-1" style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 16px; line-height: 1.8; color: var(--text-secondary);">
+                This month marks significant achievements that open many doors for multiple new initiatives in Quality Engineering automation. Our breakthrough innovations are delivering 
+                exceptional efficiency gains while establishing new industry benchmarks for operational excellence and transforming how we approach quality assurance across the organization.
+            </p> -->
+            
+            <div class="summary-grid">
+                <div class="metric-card fade-in stagger-2">
+                    <div class="metric-number">129</div>
+                    <div class="metric-label">Defects Closed</div>
+                </div>
+                <div class="metric-card fade-in stagger-3">
+                    <div class="metric-number">55+</div>
+                    <div class="metric-label">P3P4 Components</div>
+                </div>
+                <div class="metric-card fade-in stagger-4">
+                    <div class="metric-number">80%</div>
+                    <div class="metric-label">Time Saved by Automation</div>
+                </div>
+                <div class="metric-card fade-in stagger-5">
+                    <div class="metric-number">1000+</div>
+                    <div class="metric-label">RFCL Dag Runs</div>
+                </div>
+                <div class="metric-card fade-in stagger-6">
+                    <div class="metric-number">500</div>
+                    <div class="metric-label">Total Automation Pipelines Triggered</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QE Evolution Journey -->
+        <section style="padding: 25px 40px 30px; background: linear-gradient(135deg, #1a1a2e 0%, #002f6c 100%); margin: 0 5px;">
+            <h2 style="text-align: center; color: white; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 5px;">QE Functional Testing Evolution</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.5); font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 30px;">Leveraging foundational investments to accelerate our AI ambitions</p>
+
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative;">
+                <!-- Connecting gradient line -->
+                <div style="position: absolute; top: 35px; left: 12.5%; right: 12.5%; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.15) 0%, rgba(0,80,158,0.6) 40%, rgba(59,130,246,0.7) 70%, rgba(212,175,55,0.9) 100%); z-index: 0;"></div>
+
+                <!-- 2020 Manual -->
+                <div style="text-align: center; padding: 0 16px; position: relative; z-index: 1;">
+                    <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.18); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 26px;">✍️</div>
+                    <div style="font-size: 24px; font-weight: 800; color: rgba(255,255,255,0.3); line-height: 1; margin-bottom: 5px;">2020</div>
+                    <div style="font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 10px;">Manual</div>
+                    <div style="font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.6;">Spreadsheets &amp; checklists<br>High effort, slow cycles</div>
+                </div>
+
+                <!-- 2023 Automated -->
+                <div style="text-align: center; padding: 0 16px; position: relative; z-index: 1;">
+                    <div style="width: 70px; height: 70px; background: rgba(0,47,108,0.5); border: 2px solid rgba(0,80,158,0.7); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 26px;">⚡</div>
+                    <div style="font-size: 24px; font-weight: 800; color: rgba(255,255,255,0.55); line-height: 1; margin-bottom: 5px;">2023</div>
+                    <div style="font-size: 15px; font-weight: 700; color: white; margin-bottom: 10px;">Automated</div>
+                    <div style="font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.6;">Script-driven pipelines<br>500+ runs per month</div>
+                </div>
+
+                <!-- 2025 GenAI (NOW) -->
+                <div style="text-align: center; padding: 0 16px; position: relative; z-index: 1;">
+                    <div style="width: 70px; height: 70px; background: rgba(30,64,175,0.45); border: 2px solid rgba(59,130,246,0.75); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 26px; box-shadow: 0 0 18px rgba(59,130,246,0.25);">🤖</div>
+                    <div style="font-size: 24px; font-weight: 800; color: #60a5fa; line-height: 1; margin-bottom: 5px;">2025</div>
+                    <div style="font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px;">GenAI &nbsp;<span style="font-size: 9px; background: rgba(59,130,246,0.3); border: 1px solid rgba(59,130,246,0.5); color: #93c5fd; padding: 2px 8px; border-radius: 10px; letter-spacing: 0.8px; vertical-align: middle;">NOW</span></div>
+                    <div style="font-size: 11px; color: rgba(255,255,255,0.65); line-height: 1.6;">AI-assisted reviews &amp; analysis<br>80% faster code review</div>
+                </div>
+
+                <!-- By 2027 Agentic AI -->
+                <div style="text-align: center; padding: 0 16px; position: relative; z-index: 1;">
+                    <div style="width: 70px; height: 70px; background: rgba(212,175,55,0.1); border: 2px dashed rgba(212,175,55,0.65); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 26px; box-shadow: 0 0 18px rgba(212,175,55,0.12);">🚀</div>
+                    <div style="font-size: 24px; font-weight: 800; color: #d4af37; line-height: 1; margin-bottom: 5px;">2027</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #d4af37; margin-bottom: 6px;">Agentic AI &nbsp;<span style="font-size: 9px; background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.4); color: #d4af37; padding: 2px 8px; border-radius: 10px; letter-spacing: 0.8px; vertical-align: middle;">TARGET</span></div>
+                    <div style="font-size: 11px; color: rgba(212,175,55,0.6); line-height: 1.6;">Autonomous end-to-end quality<br>Self-healing test pipelines</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Automation Trends Chart Section -->
+        <section class="executive-summary" >
+            <!-- style="background: linear-gradient(135deg, #f8fafc 0%, #e8f5e8 100%);"> -->
+            <div class="container">
+                <!-- <h2 class="section-title" style="text-align: center; margin-bottom: 30px; color: var(--primary);">📈 Automation Trends - Monthly Performance</h2> -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div style="background: white; border-radius: 12px; padding: 12px 15px 15px; box-shadow: 0 8px 32px rgba(0, 47, 108, 0.1); display: flex; flex-direction: column;">
+                        <p style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 6px; text-align: center; flex-shrink: 0;">Automation Growth — Runs &amp; Hours Saved</p>
+                        <div style="flex: 1; position: relative; min-height: 260px;">
+                            <canvas id="automation-chart"></canvas>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 12px; padding: 12px 15px 15px; box-shadow: 0 8px 32px rgba(0, 47, 108, 0.1); display: flex; flex-direction: column;">
+                        <p style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 6px; text-align: center; flex-shrink: 0;">P3/P4 Defects Resolved — Monthly</p>
+                        <div style="flex: 1; position: relative; min-height: 260px;">
+                            <canvas id="vulnerability-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- March Automation Runs by Workflow Section -->
+        <section class="executive-summary" >
+            <!-- style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); margin-top: 20px;"> -->
+            <div class="container">
+                <div style="background: white; border-radius: 12px; padding: 12px 15px 15px; box-shadow: 0 8px 32px rgba(0, 47, 108, 0.1); display: flex; flex-direction: column;">
+                    <p style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 5px; text-align: center; flex-shrink: 0;">Top 10 Automation Workflows — March 2026 &nbsp;·&nbsp; 769 Total Runs</p>
+                    <div style="flex: 1; position: relative; min-height: 250px;">
+                        <canvas id="march-workflow-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs Section -->
+        <section class="tabs-section">
+            <div class="container">
+                <div class="tabs-container" style="padding: 0;">
+                    <!-- Dark Portfolio Banner -->
+                    <div style="background: linear-gradient(135deg, #1a1a2e 0%, #002f6c 100%); padding: 22px 22px 18px; position: relative; overflow: hidden; border-radius: 10px 10px 0 0;">
+                        <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 24px 24px; pointer-events: none;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <h2 style="text-align: center; color: white; font-size: 19px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.3px; font-family: 'Source Sans Pro', sans-serif;">QE Portfolio Highlights</h2>
+                            <p style="text-align: center; color: rgba(255,255,255,0.4); font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 18px;">March 2026 · Select a pillar to explore</p>
+                            <div class="tab-buttons" style="background: transparent; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                                <button class="tab-button portfolio-nav-btn active" onclick="showTab('automation')">
+                                    <div style="font-size: 18px; margin-bottom: 8px;">🚀</div>
+                                    <div style="font-size: 12px; font-weight: 700; margin-bottom: 5px;">New Initiatives</div>
+                                    <div class="pnb-sub" style="font-size: 10px; color: rgba(255,255,255,0.42); line-height: 1.5;">TRACE · DaaS Handbook<br>E2E Pipeline · Orchestration</div>
+                                </button>
+                                <button class="tab-button portfolio-nav-btn" onclick="showTab('progress')">
+                                    <div style="font-size: 18px; margin-bottom: 8px;">📊</div>
+                                    <div style="font-size: 12px; font-weight: 700; margin-bottom: 5px;">Current Progress</div>
+                                    <div class="pnb-sub" style="font-size: 10px; color: rgba(255,255,255,0.42); line-height: 1.5;">DRIVE · ACURA<br>Data Quality Insight</div>
+                                </button>
+                                <button class="tab-button portfolio-nav-btn" onclick="showTab('success')">
+                                    <div style="font-size: 18px; margin-bottom: 8px;">📈</div>
+                                    <div style="font-size: 12px; font-weight: 700; margin-bottom: 5px;">Success Stories</div>
+                                    <div class="pnb-sub" style="font-size: 10px; color: rgba(255,255,255,0.42); line-height: 1.5;">CNB 96.1% savings<br>P3/P4 · AIM Expansion</div>
+                                </button>
+                                <button class="tab-button portfolio-nav-btn" onclick="showTab('highlights')">
+                                    <div style="font-size: 18px; margin-bottom: 8px;">🌟</div>
+                                    <div style="font-size: 12px; font-weight: 700; margin-bottom: 5px;">Special Highlights</div>
+                                    <div class="pnb-sub" style="font-size: 10px; color: rgba(255,255,255,0.42); line-height: 1.5;">FIAT GenAI Training<br>GFT Cricket 2026</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <!-- Automation Tab -->
+                        <div id="automation" class="tab-pane active">
+
+                            <!-- Dark header inspired by "Technology has been core to our business" slide -->
+                            <div style="background: linear-gradient(135deg, #1a1a2e 0%, #002f6c 100%); border-radius: 10px 10px 0 0; padding: 20px 24px 16px; position: relative; overflow: hidden;">
+                                <!-- subtle grid overlay -->
+                                <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none;"></div>
+                                <div style="position: relative;">
+                                    <div style="font-size: 10px; color: rgba(212,175,55,0.75); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;">Q1 2026 · QE Portfolio</div>
+                                    <h3 style="color: white; font-size: 19px; font-weight: 700; margin-bottom: 4px; line-height: 1.3;">AI-powered quality engineering<br>has been core to our delivery success</h3>
+                                    <p style="color: rgba(255,255,255,0.45); font-size: 12px; margin: 0;">4 strategic initiatives · driving QE transformation across DaaS</p>
+                                </div>
+                            </div>
+
+                            <!-- Category header row -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; background: #f0f4f8; border-left: 1px solid #dde3ea; border-right: 1px solid #dde3ea;">
+                                <div style="padding: 10px 18px; border-right: 1px solid #dde3ea;">
+                                    <span style="font-size: 10px; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 1.2px;">🤖 AI &amp; Intelligence</span>
+                                </div>
+                                <div style="padding: 10px 18px;">
+                                    <span style="font-size: 10px; font-weight: 700; color: var(--tertiary); text-transform: uppercase; letter-spacing: 1.2px;">🔄 Pipeline &amp; Platform</span>
+                                </div>
+                            </div>
+
+                            <!-- Initiative cards grid -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #dde3ea; border-top: none; border-radius: 0 0 10px 10px; overflow: hidden;">
+
+                                <!-- Row 1, Col 1: TRACE -->
+                                <div style="padding: 18px; border-right: 1px solid #dde3ea; border-bottom: 1px solid #dde3ea; background: white;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #002f6c, #00509e); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🤖</div>
+                                        <div>
+                                            <div style="font-size: 14px; font-weight: 700; color: var(--primary); line-height: 1.2;">TRACE</div>
+                                            <div style="font-size: 10px; color: var(--text-light);">AI-First Test Intelligence</div>
+                                        </div>
+                                        <div style="margin-left: auto; font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 7px; border-radius: 10px; flex-shrink: 0;">LIVE</div>
+                                    </div>
+                                    <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px;">Multi-agent learning system with AI-powered confidence scoring. Validates 5,788+ SMT rules with 98% error detection and continuous self-improvement.</p>
+                                    <div style="font-size: 11px; color: var(--text-light); background: rgba(0,47,108,0.05); border-radius: 5px; padding: 7px 10px; line-height: 1.5;">
+                                        Real-time analysis · Automated reporting · Pattern recognition · Continuous learning
+                                    </div>
+                                </div>
+
+                                <!-- Row 1, Col 2: E2E Pipeline -->
+                                <div style="padding: 18px; border-bottom: 1px solid #dde3ea; background: white;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #7c3aed, #9333ea); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🔄</div>
+                                        <div>
+                                            <div style="font-size: 14px; font-weight: 700; color: var(--primary); line-height: 1.2;">E2E Pipeline Flow</div>
+                                            <div style="font-size: 10px; color: var(--text-light);">End-to-End Validation</div>
+                                        </div>
+                                        <div style="margin-left: auto; font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 7px; border-radius: 10px; flex-shrink: 0;">LIVE</div>
+                                    </div>
+                                    <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px;">Orchestrates data loading and validation across ETL, OTIS, CORE, and RFCL. Automated sanity checks and production comparisons at every stage.</p>
+                                    <div style="font-size: 11px; color: var(--text-light); background: rgba(124,58,237,0.05); border-radius: 5px; padding: 7px 10px; line-height: 1.5;">
+                                        ETL · OTIS · CORE · RFCL · Production comparisons
+                                    </div>
+                                </div>
+
+                                <!-- Row 2, Col 1: DaaS Handbook -->
+                                <div style="padding: 18px; border-right: 1px solid #dde3ea; background: white;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #0369a1, #0284c7); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">📚</div>
+                                        <div>
+                                            <div style="font-size: 14px; font-weight: 700; color: var(--primary); line-height: 1.2;">DaaS QE Handbook</div>
+                                            <div style="font-size: 10px; color: var(--text-light);">Standards &amp; Governance</div>
+                                        </div>
+                                        <div style="margin-left: auto; font-size: 10px; font-weight: 700; color: #15803d; background: rgba(21,128,61,0.1); border: 1px solid rgba(21,128,61,0.3); padding: 2px 7px; border-radius: 10px; flex-shrink: 0;">NEW</div>
+                                    </div>
+                                    <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px;">Comprehensive QA reference for the DaaS platform. Standardized procedures, validation checklists, and reporting guidelines for consistent quality across all pipeline stages.</p>
+                                    <div style="font-size: 11px; color: var(--text-light); background: rgba(3,105,161,0.05); border-radius: 5px; padding: 7px 10px; line-height: 1.5;">
+                                        Process guidelines · Validation checklists · Reporting standards · Onboarding
+                                    </div>
+                                </div>
+
+                                <!-- Row 2, Col 2: DAAS Orchestration -->
+                                <div style="padding: 18px; background: white;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #b45309, #d97706); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">📊</div>
+                                        <div>
+                                            <div style="font-size: 14px; font-weight: 700; color: var(--primary); line-height: 1.2;">DAAS Orchestration</div>
+                                            <div style="font-size: 10px; color: var(--text-light);">Enterprise Data Integration</div>
+                                        </div>
+                                        <div style="margin-left: auto; font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 7px; border-radius: 10px; flex-shrink: 0;">LIVE</div>
+                                    </div>
+                                    <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px;">Manages 2,070 pipeline configurations across ETL → EODc → CORE → RNA/RFCL. Full traceability from source to destination with automated impact analysis.</p>
+                                    <div style="font-size: 11px; color: var(--text-light); background: rgba(180,83,9,0.05); border-radius: 5px; padding: 7px 10px; line-height: 1.5;">
+                                        Impact analysis · BA/QA/DEV/PM visibility · Daily &amp; monthly batch
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        
+                        <!-- Progress Tab -->
+                        <div id="progress" class="tab-pane" style="display: none;">
+
+                            <!-- Progress Chart -->
+                            <div style="background: linear-gradient(135deg, #1a1a2e 0%, #002f6c 100%); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; position: relative; overflow: hidden;">
+                                <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none;"></div>
+                                <div style="position: relative;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+                                        <div>
+                                            <div style="font-size: 10px; color: rgba(212,175,55,0.75); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px;">Current Progress</div>
+                                            <div style="font-size: 18px; font-weight: 700; color: white;">Q1 Enhancement Initiatives</div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <div style="font-size: 32px; font-weight: 800; color: var(--luxury-gold); line-height: 1;">50<span style="font-size: 18px;">%</span></div>
+                                            <div style="font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px;">Overall</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Overall bar -->
+                                    <div style="background: rgba(255,255,255,0.12); border-radius: 4px; height: 6px; margin-bottom: 18px; overflow: hidden;">
+                                        <div style="width: 50%; height: 100%; background: linear-gradient(90deg, #d4af37, #f0d060); border-radius: 4px;"></div>
+                                    </div>
+
+                                    <!-- Individual bars — title left, bar middle, % right, each clickable -->
+                                    <div style="display: flex; flex-direction: column; gap: 10px;">
+
+                                        <div onclick="toggleProgressItem('drive')" id="bar-drive" style="cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 8px 10px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid transparent; transition: border-color 0.2s;">
+                                            <span style="font-size: 11px; color: rgba(255,255,255,0.85); white-space: nowrap; width: 175px; flex-shrink: 0;">🔧 DRIVE Enhancement</span>
+                                            <div style="flex: 1; background: rgba(255,255,255,0.1); border-radius: 3px; height: 6px; overflow: hidden;">
+                                                <div style="width: 100%; height: 100%; background: #4ade80; border-radius: 3px;"></div>
+                                            </div>
+                                            <span style="font-size: 11px; font-weight: 700; color: #4ade80; width: 32px; text-align: right; flex-shrink: 0;">100%</span>
+                                        </div>
+
+                                        <div onclick="toggleProgressItem('acura')" id="bar-acura" style="cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 8px 10px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid transparent; transition: border-color 0.2s;">
+                                            <span style="font-size: 11px; color: rgba(255,255,255,0.85); white-space: nowrap; width: 175px; flex-shrink: 0;">🤖 QE ACURA Enhancement</span>
+                                            <div style="flex: 1; background: rgba(255,255,255,0.1); border-radius: 3px; height: 6px; overflow: hidden;">
+                                                <div style="width: 50%; height: 100%; background: #60a5fa; border-radius: 3px;"></div>
+                                            </div>
+                                            <span style="font-size: 11px; font-weight: 700; color: #60a5fa; width: 32px; text-align: right; flex-shrink: 0;">50%</span>
+                                        </div>
+
+                                        <div onclick="toggleProgressItem('dqi')" id="bar-dqi" style="cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 8px 10px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid transparent; transition: border-color 0.2s;">
+                                            <span style="font-size: 11px; color: rgba(255,255,255,0.85); white-space: nowrap; width: 175px; flex-shrink: 0;">📊 Data Quality Insight</span>
+                                            <div style="flex: 1; background: rgba(255,255,255,0.1); border-radius: 3px; height: 6px; overflow: hidden;">
+                                                <div style="width: 0%; height: 100%; background: #94a3b8; border-radius: 3px;"></div>
+                                            </div>
+                                            <span style="font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.4); width: 32px; text-align: right; flex-shrink: 0;">0%</span>
+                                        </div>
+
+                                    </div>
+                                    <div style="margin-top: 12px; font-size: 10px; color: rgba(255,255,255,0.28); text-align: center;">Click a bar to view details</div>
+                                </div>
+                            </div>
+
+                            <!-- Per-item detail panels -->
+                            <div id="progress-detail-drive" style="display: none; margin-bottom: 16px;">
+                                <div class="content-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 25px rgba(0,0,0,0.06); border-left: 4px solid #4ade80; position: relative; overflow: hidden;">
+                                    <h3 style="font-size: 18px; margin-bottom: 12px;">🔧 DRIVE Enhancement</h3>
+                                    <p style="font-size: 16px; margin-bottom: 10px;">Enterprise-grade, automation-driven regression validation platform that systematically validates end-to-end behavior across OTIS, CORE, RNA, and RFCL components. Eliminates manual handoffs, accelerates release cycles, and provides reproducible, auditable evidence for release decisions.</p>
+                                    <div style="margin-top: 8px; padding: 8px; background: rgba(59, 130, 246, 0.1); border-radius: 5px; font-size: 14px;">
+                                        <strong>Implementation Details:</strong><br>
+                                        • <strong>Ingestion:</strong> 60 jobs automated<br>
+                                        • <strong>GRS:</strong> 75 jobs with regression and performance testing<br>
+                                        • <strong>Impact:</strong> 5 days → 1 day (80% reduction)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="progress-detail-acura" style="display: none; margin-bottom: 16px;">
+                                <div class="content-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 25px rgba(0,0,0,0.06); border-left: 4px solid #60a5fa; position: relative; overflow: hidden;">
+                                    <h3 style="font-size: 18px; margin-bottom: 12px;">🤖 QE ACURA Enhancement</h3>
+                                    <p style="font-size: 16px; margin-bottom: 10px;">AI-Powered PR Review using Claude Sonnet 4.5 providing multi-perspective analysis (Tech Lead, Architect, Security Analyst, Performance Engineer). Team actively using for PR requests with improved code quality and consistency.</p>
+                                    <div style="margin-top: 8px; padding: 8px; background: rgba(34, 197, 94, 0.1); border-radius: 5px; font-size: 14px;">
+                                        <strong>Implementation Details:</strong><br>
+                                        • <strong>Technology:</strong> Claude Sonnet 4.5 AI model<br>
+                                        • <strong>Perspectives:</strong> Tech Lead, Architect, Security Analyst, Performance Engineer<br>
+                                        • <strong>Impact:</strong> 80% reduction in code review turnaround time
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="progress-detail-dqi" style="display: none; margin-bottom: 16px;">
+                                <div class="content-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 25px rgba(0,0,0,0.06); border-left: 4px solid #94a3b8; position: relative; overflow: hidden;">
+                                    <h3 style="font-size: 18px; margin-bottom: 12px;">📊 Data Quality Insight Enhancement</h3>
+                                    <p style="font-size: 16px; margin-bottom: 10px;">Advanced data quality analysis platform providing comprehensive profiling, anomaly detection, and quality scoring across DaaS ecosystem. Enables proactive data governance and quality assurance with real-time monitoring and automated issue detection.</p>
+                                    <div style="margin-top: 8px; padding: 8px; background: rgba(6, 182, 212, 0.1); border-radius: 5px; font-size: 14px;">
+                                        <strong>Implementation Details:</strong><br>
+                                        • <strong>Capabilities:</strong> Data profiling, quality scoring, anomaly detection<br>
+                                        • <strong>Monitoring:</strong> Real-time quality metrics and alerts<br>
+                                        • <strong>Impact:</strong> Improved data governance and proactive issue resolution
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                    <!-- Success Stories Tab -->
+                        <div id="success" class="tab-pane">
+
+                            <!-- Dark header -->
+                            <div style="background: linear-gradient(135deg, #1a1a2e 0%, #002f6c 100%); border-radius: 10px 10px 0 0; padding: 20px 24px 16px; position: relative; overflow: hidden;">
+                                <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none;"></div>
+                                <div style="position: relative;">
+                                    <div style="font-size: 10px; color: rgba(212,175,55,0.75); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;">Q1 2026 · QE Outcomes</div>
+                                    <h3 style="color: white; font-size: 19px; font-weight: 700; margin-bottom: 4px; line-height: 1.3;">Delivering measurable results<br>across critical business platforms</h3>
+                                    <p style="color: rgba(255,255,255,0.45); font-size: 12px; margin: 0;">3 major wins · 3,000+ hours saved · zero production incidents</p>
+                                </div>
+                            </div>
+
+                            <!-- Top two stories side by side -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #dde3ea; border-top: none; overflow: hidden;">
+
+                                <!-- CNB E2E -->
+                                <div style="padding: 20px; border-right: 1px solid #dde3ea; background: white;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                                        <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #15803d, #16a34a); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🚀</div>
+                                        <div>
+                                            <div style="font-size: 14px; font-weight: 700; color: var(--primary); line-height: 1.2;">CNB E2E Automation</div>
+                                            <div style="font-size: 10px; color: var(--text-light);">Automation Breakthrough</div>
+                                        </div>
+                                        <div style="margin-left: auto; font-size: 10px; font-weight: 700; color: #15803d; background: rgba(21,128,61,0.1); border: 1px solid rgba(21,128,61,0.3); padding: 2px 7px; border-radius: 10px; flex-shrink: 0;">DELIVERED</div>
+                                    </div>
+                                    <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">Achieved <strong>96.1% time savings</strong> — processing reduced from 8 days to 3 hours across 17 CNB products. Complete automation framework with parallel processing capabilities.</p>
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px;">
+                                        <div style="text-align: center; padding: 8px 4px; background: rgba(21,128,61,0.06); border-radius: 6px;">
+                                            <div style="font-size: 15px; font-weight: 800; color: #15803d;">96.1%</div>
+                                            <div style="font-size: 10px; color: var(--text-light); margin-top: 1px;">Time Saved</div>
+                                        </div>
+                                        <div style="text-align: center; padding: 8px 4px; background: rgba(21,128,61,0.06); border-radius: 6px;">
+                                            <div style="font-size: 15px; font-weight: 800; color: #15803d;">3,000+</div>
+                                            <div style="font-size: 10px; color: var(--text-light); margin-top: 1px;">Hours Saved</div>
+                                        </div>
+                                        <div style="text-align: center; padding: 8px 4px; background: rgba(21,128,61,0.06); border-radius: 6px;">
+                                            <div style="font-size: 15px; font-weight: 800; color: #15803d;">17</div>
+                                            <div style="font-size: 10px; color: var(--text-light); margin-top: 1px;">CNB Products</div>
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 11px; color: var(--text-light); background: rgba(21,128,61,0.05); border-radius: 5px; padding: 7px 10px;">
+                                        8 days → 3 hours · accelerated release cycles · improved QA coverage
+                                    </div>
+                                </div>
+
+                                <!-- P3/P4 Release -->
+                                <div style="padding: 20px; background: white;">
+                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                                        <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #002f6c, #00509e); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">📊</div>
+                                        <div>
+                                            <div style="font-size: 14px; font-weight: 700; color: var(--primary); line-height: 1.2;">P3/P4 Release Readiness</div>
+                                            <div style="font-size: 10px; color: var(--text-light);">March 23 Release</div>
+                                        </div>
+                                        <div style="margin-left: auto; font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 7px; border-radius: 10px; flex-shrink: 0;">MARCH 23 ✓</div>
+                                    </div>
+                                    <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">Successfully validated <strong>24 components</strong> ready for deployment with <strong>21 defects closed</strong>. Comprehensive tracking and defect management ensured smooth execution.</p>
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px;">
+                                        <div style="text-align: center; padding: 8px 4px; background: rgba(0,47,108,0.05); border-radius: 6px;">
+                                            <div style="font-size: 15px; font-weight: 800; color: var(--secondary);">24</div>
+                                            <div style="font-size: 10px; color: var(--text-light); margin-top: 1px;">Components</div>
+                                        </div>
+                                        <div style="text-align: center; padding: 8px 4px; background: rgba(0,47,108,0.05); border-radius: 6px;">
+                                            <div style="font-size: 15px; font-weight: 800; color: var(--secondary);">21</div>
+                                            <div style="font-size: 10px; color: var(--text-light); margin-top: 1px;">Defects Closed</div>
+                                        </div>
+                                        <div style="text-align: center; padding: 8px 4px; background: rgba(0,47,108,0.05); border-radius: 6px;">
+                                            <div style="font-size: 15px; font-weight: 800; color: #15803d;">Zero</div>
+                                            <div style="font-size: 10px; color: var(--text-light); margin-top: 1px;">Prod Incidents</div>
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 11px; color: var(--text-light); background: rgba(0,47,108,0.04); border-radius: 5px; padding: 7px 10px;">
+                                        100% release compliance · enhanced stakeholder confidence
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- AIM Expansion — full width -->
+                            <div style="border: 1px solid #dde3ea; border-top: none; border-radius: 0 0 10px 10px; background: white; padding: 20px; margin-bottom: 16px;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+                                    <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #b45309, #d97706); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;">🎯</div>
+                                    <div>
+                                        <div style="font-size: 14px; font-weight: 700; color: var(--primary); line-height: 1.2;">AIM Project Expansion</div>
+                                        <div style="font-size: 10px; color: var(--text-light);">3 new systems onboarded · 2 existing systems enhanced · 13 regions covered</div>
+                                    </div>
+                                    <div style="margin-left: auto; font-size: 10px; font-weight: 700; color: var(--luxury-gold); background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.35); padding: 2px 7px; border-radius: 10px; flex-shrink: 0;">ONGOING</div>
+                                </div>
+                                <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;">Successfully onboarded three new source systems and implemented updates to two existing systems, expanding regional coverage and data integration capabilities.</p>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                    <div>
+                                        <div style="font-size: 10px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Newly Onboarded</div>
+                                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                                            <div style="display: flex; justify-content: space-between; font-size: 11px; padding: 6px 10px; background: rgba(212,175,55,0.06); border-radius: 5px; border-left: 3px solid rgba(212,175,55,0.4);"><span style="font-weight: 600;">ePAM</span><span style="color: var(--text-light);">1 region · 1 CORE job</span></div>
+                                            <div style="display: flex; justify-content: space-between; font-size: 11px; padding: 6px 10px; background: rgba(212,175,55,0.06); border-radius: 5px; border-left: 3px solid rgba(212,175,55,0.4);"><span style="font-weight: 600;">Bluebay</span><span style="color: var(--text-light);">2 regions · 2 CORE jobs</span></div>
+                                            <div style="display: flex; justify-content: space-between; font-size: 11px; padding: 6px 10px; background: rgba(212,175,55,0.06); border-radius: 5px; border-left: 3px solid rgba(212,175,55,0.4);"><span style="font-weight: 600;">T24</span><span style="color: var(--text-light);">10 regions · 10 CORE jobs</span></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 10px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Systems Enhanced</div>
+                                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                                            <div style="display: flex; justify-content: space-between; font-size: 11px; padding: 6px 10px; background: rgba(0,47,108,0.04); border-radius: 5px; border-left: 3px solid rgba(0,47,108,0.3);"><span style="font-weight: 600;">OLBB</span><span style="color: var(--text-light);">New data added</span></div>
+                                            <div style="display: flex; justify-content: space-between; font-size: 11px; padding: 6px 10px; background: rgba(0,47,108,0.04); border-radius: 5px; border-left: 3px solid rgba(0,47,108,0.3);"><span style="font-weight: 600;">CCTP</span><span style="color: var(--text-light);">200+ custom logics</span></div>
+                                        </div>
+                                        <div style="margin-top: 10px; font-size: 11px; color: var(--text-secondary);">Total coverage: <strong>13 regions</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Efficiency + Business outcomes -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                <div style="background: white; border-radius: 10px; padding: 16px 18px; border-left: 4px solid var(--secondary); box-shadow: 0 2px 15px rgba(0,0,0,0.06);">
+                                    <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 10px;">📈 Efficiency Metrics</div>
+                                    <div style="display: flex; flex-direction: column; gap: 7px;">
+                                        <div style="display: flex; justify-content: space-between; font-size: 12px;"><span style="color: var(--text-secondary);">Manual QA effort</span><strong>↓ 80%</strong></div>
+                                        <div style="display: flex; justify-content: space-between; font-size: 12px;"><span style="color: var(--text-secondary);">Error detection rate</span><strong>98%</strong></div>
+                                        <div style="display: flex; justify-content: space-between; font-size: 12px;"><span style="color: var(--text-secondary);">Config overhead</span><strong>↓ 70%</strong></div>
+                                    </div>
+                                </div>
+                                <div style="background: white; border-radius: 10px; padding: 16px 18px; border-left: 4px solid #15803d; box-shadow: 0 2px 15px rgba(0,0,0,0.06);">
+                                    <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 10px;">🎯 Business Outcomes</div>
+                                    <div style="display: flex; flex-direction: column; gap: 7px;">
+                                        <div style="display: flex; justify-content: space-between; font-size: 12px;"><span style="color: var(--text-secondary);">Release cycle time</span><strong>↓ 80%</strong></div>
+                                        <div style="display: flex; justify-content: space-between; font-size: 12px;"><span style="color: var(--text-secondary);">Production incidents</span><strong style="color: #15803d;">Zero</strong></div>
+                                        <div style="display: flex; justify-content: space-between; font-size: 12px;"><span style="color: var(--text-secondary);">Code review turnaround</span><strong>↓ 80%</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                   
+
+                    <!-- Highlights Tab -->
+                    <div id="highlights" class="tab-pane" style="display: none;">
+                        <div class="content-card" style="padding: 20px; margin-bottom: 20px;">
+                            <h3 style="font-size: 18px; margin-bottom: 12px;">🚀 FIAT Copilot GenAI Enablement</h3>
+                            <p style="font-size: 16px; margin-bottom: 10px;">Led by Margesh Shah and Anokh Shetty, this initiative empowered FIAT teams with comprehensive GenAI and Copilot training, fostering innovation and practical application across the organization.</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                                <div style="padding: 10px; background: rgba(59, 130, 246, 0.1); border-radius: 5px; text-align: center;">
+                                    <div style="font-size: 24px; font-weight: bold; color: var(--info);">380</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Participants</div>
+                                </div>
+                                <div style="padding: 10px; background: rgba(34, 197, 94, 0.1); border-radius: 5px; text-align: center;">
+                                    <div style="font-size: 24px; font-weight: bold; color: var(--success);">23</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Sessions</div>
+                                </div>
+                                <div style="padding: 10px; background: rgba(168, 85, 247, 0.1); border-radius: 5px; text-align: center;">
+                                    <div style="font-size: 24px; font-weight: bold; color: #9333ea;">100%</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Engagement</div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 15px; padding: 10px; background: rgba(0, 0, 0, 0.05); border-radius: 5px; font-size: 14px;">
+                                <strong>Key Achievements:</strong> Increased GenAI awareness, identified optimization use cases, established foundation for orchestration and agentic workflows
+                            </div>
+
+                            <div style="margin-top: 10px; padding: 8px; background: rgba(212, 175, 55, 0.1); border-radius: 5px; font-size: 13px;">
+                                <strong>Next Phase:</strong> Orchestration and Agentic AI hands-on workshops with pillar champions
+                            </div>
+                        </div>
+                        <div class="content-card" style="padding: 20px;">
+                            <h3 style="font-size: 18px; margin-bottom: 12px;">🏏 GFT Cricket Championship 2026</h3>
+                            <p style="font-size: 16px; margin-bottom: 10px;">Premier corporate cricket tournament bringing together 12 teams and 137 talented players from across GFT departments, fostering teamwork and collaboration through sportsmanship.</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                                <div style="padding: 10px; background: rgba(212, 175, 55, 0.1); border-radius: 5px; text-align: center;">
+                                    <div style="font-size: 24px; font-weight: bold; color: var(--luxury-gold);">12</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Teams</div>
+                                </div>
+                                <div style="padding: 10px; background: rgba(59, 130, 246, 0.1); border-radius: 5px; text-align: center;">
+                                    <div style="font-size: 24px; font-weight: bold; color: var(--info);">137</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Players</div>
+                                </div>
+                                <div style="padding: 10px; background: rgba(34, 197, 94, 0.1); border-radius: 5px; text-align: center;">
+                                    <div style="font-size: 24px; font-weight: bold; color: var(--success);">4</div>
+                                    <div style="font-size: 14px; color: var(--text-secondary);">Weeks</div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 15px; padding: 10px; background: rgba(0, 0, 0, 0.05); border-radius: 5px; font-size: 14px;">
+                                <strong>Key Dates:</strong> March 20 - April 10, 2026 | <strong>Format:</strong> Knockout Tournament | <strong>Contact:</strong> murali.kotha@rbc.com<br>
+                                <strong>Tournament Updates:</strong> <a href="https://rbcgithub.fg.rbc.com/pages/rbc-functions/vyc0-QE-Communication/GFT_Cricket_Tournament_Broadcast.html" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">📊 Tournament Details &amp; Results</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Content Section -->
+                <div class="navigation-section">
+                    <h3 class="nav-title">Additional QE Insights</h3>
+                    <div class="tab-buttons">
+                        <button class="tab-button" onclick="showTab('testimonials')">💬 Testimonials</button>
+                        <button class="tab-button" onclick="showTab('events')">📅 Milestones</button>
+                        <button class="tab-button" onclick="showTab('skills')">🎯 Capabilities</button>
+                    </div>
+
+                    <div id="testimonials" class="tab-pane" style="display: none; padding: 16px 0;">
+                        <div style="background: linear-gradient(135deg, rgba(0,47,108,0.04), rgba(0,47,108,0.02)); border-left: 4px solid var(--secondary); border-radius: 0 10px 10px 0; padding: 20px 24px;">
+                            <div style="font-size: 40px; color: var(--luxury-gold); opacity: 0.45; line-height: 1; margin-bottom: 6px;">"</div>
+                            <p style="font-size: 14px; color: var(--text-primary); line-height: 1.8; margin: 0 0 14px; font-style: italic;">The DAAS-QA team has demonstrated exceptional strategic value throughout Q1 and into Q2, delivering rigorous quality assurance across critical platforms including LRM, FRO, RIMMS Month End Extract, AIM, and SRP. Their proactive engagement, technical expertise, and responsiveness have been great in maintaining the highest standards of quality and reliability.</p>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Santosh Cheruku</div>
+                            <div style="font-size: 11px; color: var(--text-light);">Senior Manager, Project &amp; Program Delivery</div>
+                        </div>
+                    </div>
+
+                    <div id="events" class="tab-pane" style="display: none; padding: 16px 0;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 12px;">March 2026 — Delivered</div>
+                                <div style="display: flex; flex-direction: column; gap: 9px;">
+                                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                        <div style="font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;">Mar 1</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">DRIVE framework — production deployment</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                        <div style="font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;">Mar 10</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">TRACE AI model upgraded to v2.0</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                        <div style="font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;">Mar 15</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">QE ACURA integrated with all dev teams</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                        <div style="font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;">Mar 20</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">5,788 SMT rules validation milestone reached</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                        <div style="font-size: 10px; font-weight: 700; color: white; background: var(--secondary); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;">Mar 23</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">P3/P4 release — zero production incidents</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 12px;">Coming Up</div>
+                                <div style="display: flex; flex-direction: column; gap: 9px;">
+                                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                        <div style="font-size: 10px; font-weight: 700; color: white; background: var(--luxury-gold); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;">Apr 2</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">🏏 GFT Cricket — Quarter &amp; Semi Finals</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                        <div style="font-size: 10px; font-weight: 700; color: white; background: var(--luxury-gold); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;">Apr</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">Agentic AI hands-on workshops</div>
+                                    </div>
+                                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                        <div style="font-size: 10px; font-weight: 700; color: white; background: var(--luxury-gold); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px;">Q2</div>
+                                        <div style="font-size: 12px; color: var(--text-secondary);">TRACE v3.0 — expanded rule coverage</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="skills" class="tab-pane" style="display: none; padding: 16px 0;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div style="padding: 14px; background: white; border-radius: 8px; border-left: 3px solid var(--secondary); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 5px;">🤖 AI &amp; Agentic Testing</div>
+                                <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">Multi-agent test orchestration · GenAI-assisted PR review · Self-healing pipelines</div>
+                            </div>
+                            <div style="padding: 14px; background: white; border-radius: 8px; border-left: 3px solid var(--tertiary); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 5px;">⚡ Automation at Scale</div>
+                                <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">500+ monthly pipeline runs · 2,070 pipeline configs · E2E regression suites</div>
+                            </div>
+                            <div style="padding: 14px; background: white; border-radius: 8px; border-left: 3px solid var(--luxury-gold); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 5px;">🔍 Data Quality &amp; Governance</div>
+                                <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">Anomaly detection · Profiling &amp; scoring · Real-time monitoring across DaaS</div>
+                            </div>
+                            <div style="padding: 14px; background: white; border-radius: 8px; border-left: 3px solid #15803d; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 5px;">📋 Release Quality Assurance</div>
+                                <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">Component validation · Defect triage · Zero-incident release execution</div>
+                            </div>
+                            <div style="padding: 14px; background: white; border-radius: 8px; border-left: 3px solid #9333ea; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 5px;">🔒 Security &amp; Compliance</div>
+                                <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">Vulnerability tracking · P3/P4 remediation · Audit-ready evidence packages</div>
+                            </div>
+                            <div style="padding: 14px; background: white; border-radius: 8px; border-left: 3px solid #ea580c; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                                <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 5px;">📈 Performance &amp; Observability</div>
+                                <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">GRS regression &amp; performance · Real-time dashboards · SLA monitoring</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 12px; padding: 10px 14px; background: rgba(212,175,55,0.06); border-radius: 8px; border: 1px solid rgba(212,175,55,0.15); font-size: 11px; color: var(--text-secondary);">
+                            <strong style="color: var(--text-primary);">Team:</strong> &nbsp;ISTQB certified · AI/ML QA specialists · Cloud QA practitioners · 1,200+ training hours in Q1 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <!-- <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left;">
+                    <div>
+                        <h3>🚀 QE Excellence Center</h3>
+                        <p style="font-size: 0.9rem; line-height: 1.6;">Leading the transformation of quality engineering through innovative automation and advanced analytics.</p>
+                    </div>
+                    <div>
+                        <h3>📊 Key Achievements</h3>
+                        <ul style="list-style: none; font-size: 0.9rem;">
+                            <li>✅ 96.1% Time Efficiency</li>
+                            <li>✅ 5,788+ Rules Processed</li>
+                            <li>✅ 24 Systems Deployed</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>📧 Executive Contact</h3>
+                        <p style="font-size: 0.9rem;">
+                            <strong>Director:</strong> qe-directors@company.com<br>
+                            <strong>Team:</strong> qe-automation@company.com<br>
+                            <strong>Portal:</strong> #qe-excellence
+                        </p>
+                    </div>
+                </div> -->
+                <!-- <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.2); text-align: center;"> -->
+                    <p style="font-size: 0.85rem; opacity: 0.8;">© 2026 Quality Engineering Division | Innovation Through Automation</p>
+                    <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0px;">Executive Newsletter • March 2026 • Confidential</p>
+                <!-- </div> -->
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Performance optimizations
+        let animationFrameId = null;
+        const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        // Test function to manually show tabs
+        function testTabs() {
+            console.log('Testing tabs...');
+            const progressTab = document.getElementById('progress');
+            const highlightsTab = document.getElementById('highlights');
+            
+            if (progressTab) {
+                progressTab.style.display = 'block';
+                progressTab.classList.add('active');
+                console.log('Progress tab shown');
+            }
+            
+            if (highlightsTab) {
+                highlightsTab.style.display = 'block';
+                highlightsTab.classList.add('active');
+                console.log('Highlights tab shown');
+            }
+        }
+        
+        function toggleProgressItem(item) {
+            const items = ['drive', 'acura', 'dqi'];
+            const isCurrentlyOpen = document.getElementById('progress-detail-' + item).style.display !== 'none';
+            items.forEach(function(id) {
+                document.getElementById('progress-detail-' + id).style.display = 'none';
+                document.getElementById('bar-' + id).style.borderColor = 'transparent';
+                document.getElementById('bar-' + id).style.background = 'rgba(255,255,255,0.05)';
+            });
+            if (!isCurrentlyOpen) {
+                document.getElementById('progress-detail-' + item).style.display = 'block';
+                document.getElementById('bar-' + item).style.borderColor = 'rgba(255,255,255,0.25)';
+                document.getElementById('bar-' + item).style.background = 'rgba(255,255,255,0.1)';
+            }
+        }
+
+        function showTab(tabName) {
+            console.log('Tab clicked:', tabName); // Debug log
+            
+            // Fast tab switching without animation delays
+            if (tabName === 'automation' || tabName === 'success' || tabName === 'progress' || tabName === 'highlights') {
+                // Hide all main tab panes instantly
+                const mainPanes = document.querySelectorAll('.tabs-container .tab-pane');
+                mainPanes.forEach(pane => {
+                    pane.classList.remove('active');
+                    pane.style.display = 'none';
+                });
+                
+                // Remove active class from main tab buttons
+                const mainButtons = document.querySelectorAll('.tabs-container .tab-button');
+                mainButtons.forEach(button => button.classList.remove('active'));
+                
+                // Show selected main tab pane instantly
+                const selectedPane = document.getElementById(tabName);
+                if (selectedPane) {
+                    selectedPane.style.display = 'block';
+                    selectedPane.classList.add('active');
+                    console.log('Showing tab:', tabName); // Debug log
+                } else {
+                    console.error('Tab not found:', tabName); // Debug log
+                }
+                
+                // Add active class to clicked main button
+                if (event && event.target) {
+                    event.target.classList.add('active');
+                }
+                
+                // Hide any additional content that might be showing
+                const additionalPanes = document.querySelectorAll('.navigation-section .tab-pane');
+                additionalPanes.forEach(pane => pane.style.display = 'none');
+                
+                // Remove active class from additional buttons
+                const additionalButtons = document.querySelectorAll('.navigation-section .tab-button');
+                additionalButtons.forEach(button => button.classList.remove('active'));
+            } 
+            // Handle additional tabs (testimonials, events, skills)
+            else {
+                // Check if the clicked tab is already active
+                const clickedButton = event.target;
+                const isAlreadyActive = clickedButton.classList.contains('active');
+                
+                if (isAlreadyActive) {
+                    // If already active, collapse it instantly
+                    const additionalPanes = document.querySelectorAll('.navigation-section .tab-pane');
+                    additionalPanes.forEach(pane => pane.style.display = 'none');
+                    
+                    // Remove active class from all additional buttons
+                    const additionalButtons = document.querySelectorAll('.navigation-section .tab-button');
+                    additionalButtons.forEach(button => button.classList.remove('active'));
+                } else {
+                    // If not active, show it instantly
+                    const additionalPanes = document.querySelectorAll('.navigation-section .tab-pane');
+                    additionalPanes.forEach(pane => pane.style.display = 'none');
+                    
+                    // Remove active class from additional buttons
+                    const additionalButtons = document.querySelectorAll('.navigation-section .tab-button');
+                    additionalButtons.forEach(button => button.classList.remove('active'));
+                    
+                    // Show selected additional tab pane
+                    const selectedPane = document.getElementById(tabName);
+                    if (selectedPane) {
+                        selectedPane.style.display = 'block';
+                    }
+                    
+                    // Add active class to clicked additional button
+                    clickedButton.classList.add('active');
+                }
+            }
+        }
+        
+        // Optimized animations and interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Skip animations if reduced motion is preferred
+            if (isReducedMotion) {
+                document.querySelectorAll('.fade-in, .metric-card, .content-card, .automation-tool').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+                return;
+            }
+
+            // Throttled scroll handler for performance
+            let ticking = false;
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const heroContent = document.querySelector('.hero-content');
+                
+                if (heroContent && scrolled < window.innerHeight) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.3;
+                }
+                ticking = false;
+            }
+
+            // Parallax effect with throttling
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Optimized intersection observer with performance settings
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Add stagger effect for metrics
+                        if (entry.target.classList.contains('metric-card')) {
+                            const metricIndex = Array.from(document.querySelectorAll('.metric-card')).indexOf(entry.target);
+                            entry.target.style.transitionDelay = `${metricIndex * 0.05}s`; // Reduced delay
+                        }
+                        
+                        // Add stagger effect for content cards
+                        if (entry.target.classList.contains('content-card')) {
+                            const contentIndex = Array.from(document.querySelectorAll('.content-card')).indexOf(entry.target);
+                            entry.target.style.transitionDelay = `${contentIndex * 0.08}s`; // Reduced delay
+                        }
+                        
+                        entry.target.style.opacity = '1';
+                        // entry.target.style.transform = 'translateY(0)'; // Remove transform
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation with hardware acceleration
+            const fadeElements = document.querySelectorAll('.fade-in, .metric-card, .content-card, .automation-tool');
+            fadeElements.forEach(el => {
+                el.style.opacity = '0';
+                // Remove transform to prevent blur
+                // el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                el.style.willChange = 'opacity'; // Only opacity
+                el.style.backfaceVisibility = 'hidden';
+                observer.observe(el);
+            });
+
+            // Optimized number counting animation
+            function animateNumbers() {
+                const metrics = document.querySelectorAll('.metric-number');
+                
+                metrics.forEach(metric => {
+                    const finalText = metric.textContent;
+                    const hasPercent = finalText.includes('%');
+                    const hasPlus = finalText.includes('+');
+                    const finalNumber = parseInt(finalText.replace(/[^\d]/g, ''));
+                    
+                    let currentNumber = 0;
+                    const increment = finalNumber / 25; // Faster counting (reduced from 50)
+                    
+                    const counter = setInterval(() => {
+                        currentNumber += increment;
+                        if (currentNumber >= finalNumber) {
+                            currentNumber = finalNumber;
+                            clearInterval(counter);
+                        }
+                        
+                        let displayText = Math.floor(currentNumber).toString();
+                        if (hasPlus) displayText += '+';
+                        if (hasPercent) displayText += '%';
+                        
+                        metric.textContent = displayText;
+                    }, 20); // Faster interval (reduced from 30)
+                });
+            }
+
+            // Trigger number animation when metrics section is visible
+            const metricsSection = document.querySelector('.summary-grid');
+            if (metricsSection) {
+                const metricsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateNumbers();
+                            metricsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                metricsObserver.observe(metricsSection);
+            }
+
+            // Optimized hover effects with debouncing
+            const cards = document.querySelectorAll('.metric-card, .content-card, .skill-card, .automation-tool');
+            const hoverTimeouts = new Map();
+            
+            cards.forEach(card => {
+                // Skip hover animations to prevent blur
+                // card.addEventListener('mouseenter', () => {
+                //     const timeoutId = hoverTimeouts.get(card);
+                //     if (timeoutId) clearTimeout(timeoutId);
+                //     
+                //     card.style.transform = 'translateY(-8px) scale(1.01)';
+                // });
+                
+                // card.addEventListener('mouseleave', () => {
+                //     const timeoutId = setTimeout(() => {
+                //         card.style.transform = 'translateY(0) scale(1)';
+                //     }, 100);
+                //     hoverTimeouts.set(card, timeoutId);
+                // });
+            });
+
+            // Keyboard navigation support
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('keyboard-navigation');
+            });
+        });
+    </script>
+
+    <!-- Chart.js Implementation -->
+    <script>
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('automation-chart');
+            if (!canvas) {
+                console.error('Chart canvas not found');
+                return;
+            }
+
+            const ctx = canvas.getContext('2d');
+            if (!ctx) {
+                console.error('Failed to get 2D context');
+                return;
+            }
+
+            // Gradient fills matching newsletter palette
+            const navyGrad = ctx.createLinearGradient(0, 0, 0, 260);
+            navyGrad.addColorStop(0, 'rgba(0, 47, 108, 0.45)');
+            navyGrad.addColorStop(1, 'rgba(0, 47, 108, 0.03)');
+
+            const goldGrad = ctx.createLinearGradient(0, 0, 0, 260);
+            goldGrad.addColorStop(0, 'rgba(212, 175, 55, 0.45)');
+            goldGrad.addColorStop(1, 'rgba(212, 175, 55, 0.03)');
+
+            // Create the chart
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+                    datasets: [
+                        {
+                            label: 'Automation Runs',
+                            data: [280, 330, 385, 420, 500],
+                            borderColor: 'rgb(0, 47, 108)',
+                            backgroundColor: navyGrad,
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: 'rgb(0, 47, 108)',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2,
+                            pointRadius: 6,
+                            pointHoverRadius: 8,
+                            yAxisID: 'y',
+                        },
+                        {
+                            label: 'Hours Saved',
+                            data: [738, 850, 967, 1116, 1300],
+                            borderColor: 'rgb(212, 175, 55)',
+                            backgroundColor: goldGrad,
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: 'rgb(212, 175, 55)',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2,
+                            pointRadius: 6,
+                            pointHoverRadius: 8,
+                            yAxisID: 'y1',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20,
+                                font: {
+                                    family: 'Source Sans Pro',
+                                    size: 13,
+                                    weight: '600'
+                                },
+                                color: '#2d3748'
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleFont: {
+                                family: 'Source Sans Pro',
+                                size: 14,
+                                weight: '600'
+                            },
+                            bodyFont: {
+                                family: 'Source Sans Pro',
+                                size: 13
+                            },
+                            padding: 12,
+                            cornerRadius: 8,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y.toLocaleString();
+                                        if (context.datasetIndex === 0) {
+                                            label += ' runs';
+                                        } else {
+                                            label += ' hours saved';
+                                        }
+                                    }
+                                    return label;
+                                }
+                            }
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                font: {
+                                    family: 'Source Sans Pro',
+                                    size: 12,
+                                    weight: '600'
+                                },
+                                color: '#4a5568'
+                            }
+                        },
+                        y: {
+                            beginAtZero: false,
+                            position: 'left',
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                font: { family: 'Source Sans Pro', size: 11, weight: '600' },
+                                color: 'rgb(0, 47, 108)',
+                                callback: function(value) { return value.toLocaleString(); }
+                            }
+                        },
+                        y1: {
+                            beginAtZero: false,
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: {
+                                font: { family: 'Source Sans Pro', size: 11, weight: '600' },
+                                color: 'rgb(180, 145, 30)',
+                                callback: function(value) { return value.toLocaleString(); }
+                            }
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    elements: {
+                        point: {
+                            hoverBorderWidth: 3
+                        }
+                    }
+                }
+            });
+
+            // Create the vulnerability fixes chart
+            const vulnerabilityCanvas = document.getElementById('vulnerability-chart');
+            if (vulnerabilityCanvas) {
+                const vulnerabilityCtx = vulnerabilityCanvas.getContext('2d');
+                if (vulnerabilityCtx) {
+                    const vulnerabilityChart = new Chart(vulnerabilityCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+                            datasets: [{
+                                label: 'P3P4 Vulnerability Fixes',
+                                data: [21, 61, 73, 40, 39, 64],
+                                backgroundColor: 'rgba(0, 47, 108, 0.82)',
+                                borderColor: 'rgb(0, 47, 108)',
+                                borderWidth: 2,
+                                borderRadius: 6,
+                                hoverBackgroundColor: 'rgba(0, 80, 158, 1)',
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                    labels: {
+                                        usePointStyle: true,
+                                        padding: 15,
+                                        font: {
+                                            family: 'Source Sans Pro',
+                                            size: 12,
+                                            weight: '600'
+                                        },
+                                        color: '#2d3748'
+                                    }
+                                },
+                                tooltip: {
+                                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                    titleFont: {
+                                        family: 'Source Sans Pro',
+                                        size: 12,
+                                        weight: '600'
+                                    },
+                                    bodyFont: {
+                                        family: 'Source Sans Pro',
+                                        size: 11
+                                    },
+                                    padding: 10,
+                                    cornerRadius: 6,
+                                    displayColors: true,
+                                    callbacks: {
+                                        label: function(context) {
+                                            let label = context.dataset.label || '';
+                                            if (label) {
+                                                label += ': ';
+                                            }
+                                            if (context.parsed.y !== null) {
+                                                label += context.parsed.y + ' fixes';
+                                            }
+                                            return label;
+                                        }
+                                    }
+                                },
+                                title: {
+                                    display: false
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    grid: {
+                                        display: false
+                                    },
+                                    ticks: {
+                                        font: {
+                                            family: 'Source Sans Pro',
+                                            size: 11,
+                                            weight: '600'
+                                        },
+                                        color: '#4a5568'
+                                    }
+                                },
+                                y: {
+                                    beginAtZero: true,
+                                    grid: {
+                                        color: 'rgba(0, 0, 0, 0.05)',
+                                        drawBorder: false
+                                    },
+                                    ticks: {
+                                        font: {
+                                            family: 'Source Sans Pro',
+                                            size: 11,
+                                            weight: '600'
+                                        },
+                                        color: '#4a5568',
+                                        callback: function(value) {
+                                            return value;
+                                        }
+                                    }
+                                }
+                            },
+                            interaction: {
+                                intersect: false,
+                                mode: 'index'
+                            },
+                            elements: {
+                                bar: {
+                                    hoverBorderWidth: 2
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            // Create the March workflow chart
+            const marchCanvas = document.getElementById('march-workflow-chart');
+            if (marchCanvas) {
+                const marchCtx = marchCanvas.getContext('2d');
+                if (marchCtx) {
+                    const marchChart = new Chart(marchCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: [
+                                'SPARK_DATA_COMPARE', 'EODc File Comparator', 'FETCH_BATCH_ID_INFO', 
+                                'Daas-DataInsightReport', 'Data Comparison Executed for table', 'CDCT', 
+                                'CORE_WEBSERVICES_API_VALIDATOR and Regression', 'CORE Data Copy', 'GRS Regression', 
+                                'core_regression_automation'
+                            ],
+                            datasets: [{
+                                label: 'March Automation Runs',
+                                data: [305, 104, 80, 68, 51, 43, 50, 35, 21, 12],
+                                backgroundColor: [
+                                    'rgba(212, 175, 55, 0.88)',
+                                    'rgba(0, 47, 108, 0.82)', 'rgba(0, 47, 108, 0.76)', 'rgba(0, 47, 108, 0.70)',
+                                    'rgba(0, 47, 108, 0.64)', 'rgba(0, 47, 108, 0.58)', 'rgba(0, 47, 108, 0.52)',
+                                    'rgba(0, 47, 108, 0.46)', 'rgba(0, 47, 108, 0.40)', 'rgba(0, 47, 108, 0.34)'
+                                ],
+                                borderColor: [
+                                    'rgb(212, 175, 55)',
+                                    'rgb(0, 47, 108)', 'rgb(0, 47, 108)', 'rgb(0, 47, 108)',
+                                    'rgb(0, 47, 108)', 'rgb(0, 47, 108)', 'rgb(0, 47, 108)',
+                                    'rgb(0, 47, 108)', 'rgb(0, 47, 108)', 'rgb(0, 47, 108)'
+                                ],
+                                borderWidth: 2,
+                                borderRadius: 4,
+                                hoverBackgroundColor: [
+                                    'rgba(212, 175, 55, 1)',
+                                    'rgba(0, 80, 158, 0.95)', 'rgba(0, 80, 158, 0.95)', 'rgba(0, 80, 158, 0.95)',
+                                    'rgba(0, 80, 158, 0.95)', 'rgba(0, 80, 158, 0.95)', 'rgba(0, 80, 158, 0.95)',
+                                    'rgba(0, 80, 158, 0.95)', 'rgba(0, 80, 158, 0.95)', 'rgba(0, 80, 158, 0.95)'
+                                ]
+                            }]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            animation: {
+                                duration: 0
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false
+                                },
+                                tooltip: {
+                                    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                                    titleFont: {
+                                        family: 'Source Sans Pro',
+                                        size: 13,
+                                        weight: '600'
+                                    },
+                                    bodyFont: {
+                                        family: 'Source Sans Pro',
+                                        size: 12,
+                                        weight: '500'
+                                    },
+                                    padding: 12,
+                                    cornerRadius: 6,
+                                    displayColors: true,
+                                    boxPadding: 4,
+                                    callbacks: {
+                                        title: function(context) {
+                                            return context[0].label;
+                                        },
+                                        label: function(context) {
+                                            const runs = context.parsed.x;
+                                            const total = 769;
+                                            const percentage = ((runs / total) * 100).toFixed(1);
+                                            return [
+                                                `Runs: ${runs.toLocaleString()}`,
+                                                `Share: ${percentage}% of top 10`
+                                            ];
+                                        }
+                                    }
+                                },
+                                title: {
+                                    display: false
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    beginAtZero: true,
+                                    grid: {
+                                        color: 'rgba(0, 0, 0, 0.05)',
+                                        drawBorder: false
+                                    },
+                                    ticks: {
+                                        font: {
+                                            family: 'Source Sans Pro',
+                                            size: 10,
+                                            weight: '600'
+                                        },
+                                        color: '#4a5568'
+                                    }
+                                },
+                                y: {
+                                    grid: {
+                                        display: false
+                                    },
+                                    ticks: {
+                                        font: {
+                                            family: 'Source Sans Pro',
+                                            size: 9,
+                                            weight: '600'
+                                        },
+                                        color: '#4a5568'
+                                    }
+                                }
+                            },
+                            interaction: {
+                                intersect: false,
+                                mode: 'nearest'
+                            },
+                            elements: {
+                                bar: {
+                                    hoverBorderWidth: 1
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
